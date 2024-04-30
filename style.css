@@ -75,6 +75,9 @@ body{
     text-align: center;
     display: none;
 }
+.fa-bars{
+    display: none;
+}
 /* --categories */
 .categories{
     display: flex;
@@ -82,7 +85,6 @@ body{
     justify-content: space-around;
     padding: 10px;
     border-bottom: solid 1px black;
-    flex-wrap: wrap;
     gap: 20px;
 }
 .categories p{
@@ -92,6 +94,7 @@ body{
     border-radius: 200px;
     border: solid 2px #9F33E8;
     transition: 1s;
+    cursor: pointer;
 }
 .categories p:hover{
     color: #9F33E8;
@@ -108,6 +111,7 @@ body{
     width: 100%;
 }
 .banner__offer{
+    opacity: 0;
     background-color: white;
     border: solid 2px black;
     padding: 20px;
@@ -115,6 +119,19 @@ body{
     position: absolute;
     top: 30%;
     left: 5%;
+    animation-name: zoom;
+    animation-duration:1s;
+    animation-fill-mode: forwards;
+}
+@keyframes zoom {
+    0%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 /* recommended */
 .recommended{
@@ -132,9 +149,11 @@ body{
     justify-content: space-between;
     margin-top: 20px;
     flex-wrap: wrap;
+    gap: 30px;
 }
 .recommended .course-card{
-    width:230px;
+    flex-grow: 1;
+    flex-basis: 20%;
 }
 .recommended__img{
     width: 100%;
@@ -186,10 +205,13 @@ body{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
 }
 .popular .course-card{
-    width:300px;
-    margin-top: 20px;
+
+    flex-grow: 1;
+    flex-basis: 20%;
 }
 .popular__img{
     width: 100%;
@@ -220,4 +242,46 @@ body{
 .footer__two h2{
     font-weight: 500;
     font-size: 40px;
+}
+
+@media screen and (max-width:1000px){
+    .navbar__row2{
+        display: none;
+    }
+
+}
+@media screen and (max-width:850px){
+    .categories{
+        display: none;
+    }
+    body{
+        font-size: 10px;
+    }
+    .navbar__row2,.navbar__row3__courses,.navbar__row__3__learning{
+        display: none;
+    }
+    .navbar i{
+        font-size: 18px;
+    }
+    .navbar .fa-bars{
+        display: block !important;
+    }
+    .recommended .course-card{
+        flex-grow: 1;
+        flex-basis: 40%;
+    }
+    .popular .course-card{
+        flex-grow: 1;
+        flex-basis: 40%;
+    }
+    .banner__offer{
+        width: 40%;
+        top: 10%;
+    }
+}
+@media screen and (max-width:600px){
+    .banner__offer{
+        display: none;
+    }
+    
 }
