@@ -13,6 +13,10 @@ body{
     align-items: center;
     padding:5px 20px;
     border-bottom: solid 1px black;
+    position: sticky;
+    top: 0px;
+    background-color:white;
+    z-index: 1;
 }
 .navbar__row1__title{
     font-weight: 500;
@@ -28,6 +32,7 @@ body{
     border: solid 1px black;
     padding: 10px;
     border-radius: 200px;
+    background-color: white;
 }
 .navbar__row2__input{
     width: 100%;
@@ -35,7 +40,7 @@ body{
     outline: none;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-  
+    background-color: white;
     font-size: 14px;
 }
 .navbar__row3{
@@ -48,9 +53,27 @@ body{
     font-weight: 500;
     font-size: 18px;
 }
-.navbar__row3__learning{
+.navbar__row3__learning-para{
     font-weight: 500;
     font-size: 18px;
+}
+.navbar__row__3__learning{
+    position: relative;
+    cursor: pointer;
+}
+.navbar__row__3__learning:hover .navbar__row__3__learning-popup{
+    display: block;
+}
+.navbar__row__3__learning-popup{
+    background-color: #ffffff;
+    border: solid 2px black;
+    width: 150px;
+    padding:10px;
+    position: absolute;
+    right: 0px;
+    top: 30px;
+    text-align: center;
+    display: none;
 }
 /* --categories */
 .categories{
@@ -75,11 +98,23 @@ body{
     background-color: transparent;
 }
 /* banner */
+.banner{
+    position: relative;
+}
 .banner__image{
     width: 100%;
 }
 .banner__image img{
     width: 100%;
+}
+.banner__offer{
+    background-color: white;
+    border: solid 2px black;
+    padding: 20px;
+    width: 30%;
+    position: absolute;
+    top: 30%;
+    left: 5%;
 }
 /* recommended */
 .recommended{
